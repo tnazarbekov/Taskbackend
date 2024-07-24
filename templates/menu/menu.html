@@ -1,0 +1,10 @@
+<ul>
+    {% for item in menu_items %}
+        <li class="{% if item == active_item or item.parent == active_item %}active{% endif %}">
+            <a href="{{ item.get_absolute_url }}">{{ item.title }}</a>
+            {% if item.children.all %}
+                {% include 'menu/menu.html' with menu_items=item.children.all %}
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>

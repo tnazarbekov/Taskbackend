@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menu Example</title>
+</head>
+<body>
+    {% load menu_tags %}
+    {% draw_menu 'main_menu' %}
+    <div>
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
